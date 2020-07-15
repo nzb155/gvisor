@@ -116,3 +116,13 @@ Some notes on the above:
 *   `harness.GetMachine` marks how many machines this tests needs. If you have a
     client and server and to mark them as multiple machines, call it
     `GetMachine` twice.
+
+## Profiling
+
+Benchmark tools uses dockerutil's profiling. See the readme at
+//pkg/test/dockerutil/README.md for details.
+
+A script has been provided to run profiled benchmarks at
+//scripts/benchmark_profile.sh. You can run it as is or with:
+`./scripts/benchmark_profile.sh //path/to/target --pprof-block
+--pprof-duration=10000 ...`
