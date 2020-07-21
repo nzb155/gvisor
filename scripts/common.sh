@@ -51,6 +51,14 @@ function benchmark_runsc() {
     "$@"
 }
 
+function root_benchmark_runsc(){
+  run_as_root "$1" --runtime=${RUNTIME} \
+    --test.bench=. \
+    --test.v \
+    --test.benchmem \
+    "${@:2}"
+}
+
 function install_runsc_for_test() {
   local -r test_name=$1
   shift
