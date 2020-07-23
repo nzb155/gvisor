@@ -50,10 +50,7 @@ func epollEvents(t *kernel.Task, eventsAddr usermem.Addr, numEvents, maxBytes ui
 			sb.WriteString("...")
 			break
 		}
-		if _, ok := addr.AddLength(uint64(linux.SizeOfEpollEvent)); !ok {
-			fmt.Fprintf(&sb, "{error reading event at %#x: EFAULT}", addr)
-			continue
-		}
+		addr, _ = addr.AddLength(uint64(linux.SizeOfEpollEvent))
 	}
 	sb.WriteString("}")
 	return sb.String()
