@@ -64,7 +64,9 @@ go_library(
         "//pkg/bpf",
         "//pkg/context",
         "//pkg/log",
+        "//pkg/marshal",
         "//pkg/metric",
+        "//pkg/primitive",
         "//pkg/rand",
         "//pkg/safemem",
         "//pkg/sentry/arch",
@@ -99,7 +101,5 @@ go_library(
         "//pkg/syserror",
         "//pkg/usermem",
         "//pkg/waiter",
-        "//tools/go_marshal/marshal",
-        "//tools/go_marshal/primitive",
     ],
 )
